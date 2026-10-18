@@ -1,0 +1,40 @@
+{
+ "comparisons": 75,
+ "model": "red_cnn",
+ "per_metric": {
+  "cho_auc_mean": {
+   "max_rel": null,
+   "min_rel": null,
+   "n": 15,
+   "n_identical": 15
+  },
+  "cnr_mean": {
+   "max_rel": 6.358155165278288e-05,
+   "min_rel": 2.2595763749391157e-05,
+   "n": 15,
+   "n_identical": 0
+  },
+  "npwe_mean": {
+   "max_rel": 3.616431010731347e-05,
+   "min_rel": 2.286619972750822e-06,
+   "n": 15,
+   "n_identical": 0
+  },
+  "psnr": {
+   "max_rel": 4.6874104727737236e-07,
+   "min_rel": 3.1548693282908354e-07,
+   "n": 15,
+   "n_identical": 0
+  },
+  "ssim": {
+   "max_rel": 1.0866535656454244e-07,
+   "min_rel": 8.855587236661334e-08,
+   "n": 15,
+   "n_identical": 0
+  }
+ },
+ "plotted_range": [
+  8.855587236661334e-08,
+  6.358155165278288e-05
+ ]
+}

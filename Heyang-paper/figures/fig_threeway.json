@@ -1,0 +1,465 @@
+{
+ "pairs": [
+  "reference_vs_windows",
+  "reference_vs_linux",
+  "windows_vs_linux"
+ ],
+ "per_pair": {
+  "reference_vs_linux": {
+   "blur": {
+    "bit_identical": false,
+    "per_metric": {
+     "cho_auc_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "cnr_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "npwe_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "psnr": {
+      "max_reldiff": 3.411694945381732e-16,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "ssim": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     }
+    }
+   },
+   "corediff": {
+    "bit_identical": false,
+    "per_metric": {
+     "cho_auc_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "cnr_mean": {
+      "max_reldiff": 1.394168288607524e-05,
+      "n_diffs": 15,
+      "n_identical_nonfinite": 0
+     },
+     "npwe_mean": {
+      "max_reldiff": 7.17247387470935e-06,
+      "n_diffs": 15,
+      "n_identical_nonfinite": 0
+     },
+     "psnr": {
+      "max_reldiff": 4.1715727550865776e-07,
+      "n_diffs": 15,
+      "n_identical_nonfinite": 0
+     },
+     "ssim": {
+      "max_reldiff": 1.920246417869738e-07,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     }
+    }
+   },
+   "ctformer": {
+    "bit_identical": false,
+    "per_metric": {
+     "cho_auc_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "cnr_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "npwe_mean": {
+      "max_reldiff": 1.7648764472191338e-16,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "psnr": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "ssim": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     }
+    }
+   },
+   "learn": {
+    "bit_identical": false,
+    "per_metric": {
+     "cho_auc_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "cnr_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 15
+     },
+     "npwe_mean": {
+      "max_reldiff": 1.4269387164860856e-16,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "psnr": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "ssim": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     }
+    }
+   },
+   "red_cnn": {
+    "bit_identical": false,
+    "per_metric": {
+     "cho_auc_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "cnr_mean": {
+      "max_reldiff": 6.35775092960916e-05,
+      "n_diffs": 15,
+      "n_identical_nonfinite": 0
+     },
+     "npwe_mean": {
+      "max_reldiff": 3.616300229728398e-05,
+      "n_diffs": 15,
+      "n_identical_nonfinite": 0
+     },
+     "psnr": {
+      "max_reldiff": 4.6874082755930595e-07,
+      "n_diffs": 15,
+      "n_identical_nonfinite": 0
+     },
+     "ssim": {
+      "max_reldiff": 1.08665344756384e-07,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     }
+    }
+   }
+  },
+  "reference_vs_windows": {
+   "blur": {
+    "bit_identical": true,
+    "per_metric": {
+     "cho_auc_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "cnr_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "npwe_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "psnr": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "ssim": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     }
+    }
+   },
+   "corediff": {
+    "bit_identical": false,
+    "per_metric": {
+     "cho_auc_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "cnr_mean": {
+      "max_reldiff": 2.501577851671789e-05,
+      "n_diffs": 15,
+      "n_identical_nonfinite": 0
+     },
+     "npwe_mean": {
+      "max_reldiff": 5.152732093647571e-06,
+      "n_diffs": 15,
+      "n_identical_nonfinite": 0
+     },
+     "psnr": {
+      "max_reldiff": 4.2175323662367546e-07,
+      "n_diffs": 15,
+      "n_identical_nonfinite": 0
+     },
+     "ssim": {
+      "max_reldiff": 1.8854765240844626e-07,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     }
+    }
+   },
+   "ctformer": {
+    "bit_identical": false,
+    "per_metric": {
+     "cho_auc_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "cnr_mean": {
+      "max_reldiff": 4.4127719483885376e-07,
+      "n_diffs": 10,
+      "n_identical_nonfinite": 0
+     },
+     "npwe_mean": {
+      "max_reldiff": 2.029496998207124e-07,
+      "n_diffs": 15,
+      "n_identical_nonfinite": 0
+     },
+     "psnr": {
+      "max_reldiff": 2.637257352553478e-10,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "ssim": {
+      "max_reldiff": 2.512366359189306e-09,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     }
+    }
+   },
+   "learn": {
+    "bit_identical": false,
+    "per_metric": {
+     "cho_auc_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "cnr_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 15
+     },
+     "npwe_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "psnr": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "ssim": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     }
+    }
+   },
+   "red_cnn": {
+    "bit_identical": false,
+    "per_metric": {
+     "cho_auc_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "cnr_mean": {
+      "max_reldiff": 6.35775092960916e-05,
+      "n_diffs": 15,
+      "n_identical_nonfinite": 0
+     },
+     "npwe_mean": {
+      "max_reldiff": 3.616300229728398e-05,
+      "n_diffs": 15,
+      "n_identical_nonfinite": 0
+     },
+     "psnr": {
+      "max_reldiff": 4.6874082755930595e-07,
+      "n_diffs": 15,
+      "n_identical_nonfinite": 0
+     },
+     "ssim": {
+      "max_reldiff": 1.08665344756384e-07,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     }
+    }
+   }
+  },
+  "windows_vs_linux": {
+   "blur": {
+    "bit_identical": false,
+    "per_metric": {
+     "cho_auc_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "cnr_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "npwe_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "psnr": {
+      "max_reldiff": 3.411694945381732e-16,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "ssim": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     }
+    }
+   },
+   "corediff": {
+    "bit_identical": false,
+    "per_metric": {
+     "cho_auc_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "cnr_mean": {
+      "max_reldiff": 1.4610446696114738e-05,
+      "n_diffs": 15,
+      "n_identical_nonfinite": 0
+     },
+     "npwe_mean": {
+      "max_reldiff": 2.0197521883037006e-06,
+      "n_diffs": 15,
+      "n_identical_nonfinite": 0
+     },
+     "psnr": {
+      "max_reldiff": 5.736457755707288e-09,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "ssim": {
+      "max_reldiff": 3.4769900341058366e-09,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     }
+    }
+   },
+   "ctformer": {
+    "bit_identical": false,
+    "per_metric": {
+     "cho_auc_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "cnr_mean": {
+      "max_reldiff": 4.4127719483885376e-07,
+      "n_diffs": 10,
+      "n_identical_nonfinite": 0
+     },
+     "npwe_mean": {
+      "max_reldiff": 2.0294969999720002e-07,
+      "n_diffs": 15,
+      "n_identical_nonfinite": 0
+     },
+     "psnr": {
+      "max_reldiff": 2.637257352553478e-10,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "ssim": {
+      "max_reldiff": 2.512366359189306e-09,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     }
+    }
+   },
+   "learn": {
+    "bit_identical": false,
+    "per_metric": {
+     "cho_auc_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "cnr_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 15
+     },
+     "npwe_mean": {
+      "max_reldiff": 1.4269387164860856e-16,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "psnr": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "ssim": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     }
+    }
+   },
+   "red_cnn": {
+    "bit_identical": true,
+    "per_metric": {
+     "cho_auc_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "cnr_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "npwe_mean": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "psnr": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     },
+     "ssim": {
+      "max_reldiff": 0.0,
+      "n_diffs": 0,
+      "n_identical_nonfinite": 0
+     }
+    }
+   }
+  }
+ }
+}

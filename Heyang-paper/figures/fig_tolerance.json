@@ -1,0 +1,66 @@
+{
+ "comparisons": 375,
+ "finite_comparisons": 360,
+ "per_metric": {
+  "cho_auc_mean": {
+   "max_absdiff": 0.0,
+   "n": 75,
+   "n_above_abs_1e-6": 0,
+   "n_above_rel_1e-4": 0,
+   "n_distinct_nonzero_points": 0,
+   "n_identical": 75,
+   "reference_range": [
+    1.0,
+    1.0
+   ]
+  },
+  "cnr_mean": {
+   "max_absdiff": 0.0006975147027556972,
+   "n": 60,
+   "n_above_abs_1e-6": 30,
+   "n_above_rel_1e-4": 0,
+   "n_distinct_nonzero_points": 6,
+   "n_identical": 30,
+   "reference_range": [
+    2.5744348619575876,
+    13.04470551337729
+   ]
+  },
+  "npwe_mean": {
+   "max_absdiff": 34.25529654347338,
+   "n": 75,
+   "n_above_abs_1e-6": 30,
+   "n_above_rel_1e-4": 0,
+   "n_distinct_nonzero_points": 8,
+   "n_identical": 35,
+   "reference_range": [
+    156001.34799522406,
+    972688.9467088187
+   ]
+  },
+  "psnr": {
+   "max_absdiff": 2.51463792082518e-05,
+   "n": 75,
+   "n_above_abs_1e-6": 30,
+   "n_above_rel_1e-4": 0,
+   "n_distinct_nonzero_points": 7,
+   "n_identical": 40,
+   "reference_range": [
+    41.624607048076854,
+    58.96262390374162
+   ]
+  },
+  "ssim": {
+   "max_absdiff": 1.8958021830162153e-07,
+   "n": 75,
+   "n_above_abs_1e-6": 0,
+   "n_above_rel_1e-4": 0,
+   "n_distinct_nonzero_points": 6,
+   "n_identical": 45,
+   "reference_range": [
+    0.9303868849084015,
+    0.9973506909546428
+   ]
+  }
+ }
+}

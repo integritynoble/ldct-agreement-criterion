@@ -1,0 +1,359 @@
+{
+ "tolerance": 1e-06,
+ "tolerance_kind": "absolute",
+ "criterion_note": "Linux rerun vs reference onboard results; shipped pre-registered criterion is absolute 1e-6, unchanged; the comparator additionally declares agreement per metric in that metric's own units at relative 1e-4 (identical to recompare_per_metric.py). Owner decision 2026-09-25: keep the cross-environment framing (cross-environment kept) -- the Linux run is the paper's recomputation.",
+ "recomputation": {
+  "env": "Ubuntu 24.04.3 LTS (WSL2), Python 3.12.3",
+  "dir": "WS-1_dataset/R6_recalc/results/linux_rerun",
+  "files": {
+   "blur": "071b1a9fe659659f62a5b303d9b6046f79dbb694471fddfa0a41907ca177fc2d",
+   "red_cnn": "c8304100dc4b65a7d3e150207a420e16bf980fcdbc7ebd17d2527c3a5ef5acb1",
+   "learn": "c69029a8ad051e318a55dc17d687bd6ea5915f72d1340596b66015bacd3b2b72",
+   "ctformer": "ba498722806b2ec918de7672111b3643868060cb37c3b8b6b561d77c4e10c3c3",
+   "corediff": "1f923476081d05e31f3bda1fd937daddeed60a0b003fadc90aa17b9eb90dfc95"
+  }
+ },
+ "baseline": {
+  "name": "reference onboard results (the paper's reference)",
+  "dir": "WS-1_dataset/baselines/results",
+  "files": {
+   "blur": "aa046be6a372566ed05281f29efa39a1a02078c9b91383d2206361a05932438c",
+   "red_cnn": "3e49c67b3797e1954ea83d32b547d213413ba962e8e0f904d394c5685690a439",
+   "learn": "e0c84ab6a4ce2660c366f1b9f85c6528e4b81fcc281bd4c61ff7cb78688ab848",
+   "ctformer": "2187e3b0c0ed2d09896d6919e537d9ddddb62ccc00901c48d4a5a1f580fb15c8",
+   "corediff": "f437681ffe49568a0db09c485a303e0adff2c20851dbc41ac2394025995eb77d"
+  }
+ },
+ "hash_convention": "SHA-256 over the bytes git stores for each listed file (git cat-file blob HEAD:<repo-relative path>, i.e. the LF bytes of a checkout with core.autocrlf=false), not over Windows CRLF working copies. Files not tracked at HEAD fall back to a binary read of the working copy; each entry's convention is recorded in hash_sources. Fixes the earlier reference hashes taken over CRLF working copies, which matched 0/5 committed files.",
+ "hash_sources": {
+  "recomputation": {
+   "blur": "git-blob@HEAD",
+   "red_cnn": "git-blob@HEAD",
+   "learn": "git-blob@HEAD",
+   "ctformer": "git-blob@HEAD",
+   "corediff": "git-blob@HEAD"
+  },
+  "baseline": {
+   "blur": "git-blob@HEAD",
+   "red_cnn": "git-blob@HEAD",
+   "learn": "git-blob@HEAD",
+   "ctformer": "git-blob@HEAD",
+   "corediff": "git-blob@HEAD"
+  }
+ },
+ "criterion": {
+  "declared_on": "2026-09-12",
+  "declared_in": "R6独立复算操作指南.md §4, revision of 2026-09-12; Director decision 2026-09-11 §2.1 route (b)",
+  "per_metric": {
+   "psnr": {
+    "kind": "relative",
+    "tol": 0.0001,
+    "units": "dB"
+   },
+   "ssim": {
+    "kind": "relative",
+    "tol": 0.0001,
+    "units": "index in [0,1]"
+   },
+   "cnr_mean": {
+    "kind": "relative",
+    "tol": 0.0001,
+    "units": "ratio"
+   },
+   "cho_auc_mean": {
+    "kind": "relative",
+    "tol": 0.0001,
+    "units": "AUC in [0,1]"
+   },
+   "npwe_mean": {
+    "kind": "relative",
+    "tol": 0.0001,
+    "units": "observer statistic ~1e5-1e6"
+   },
+   "n": {
+    "kind": "absolute",
+    "tol": 0.0,
+    "units": "count"
+   }
+  },
+  "derived_by": "R6_recalc/compare_linux_vs_ref.py"
+ },
+ "per_model": {
+  "blur": {
+   "status": "PASS",
+   "n_checked": 75,
+   "n_diffs": 0,
+   "n_identical_nonfinite": 0,
+   "identical_nonfinite": [],
+   "worst_absdiff": 1.4210854715202004e-14,
+   "worst_reldiff": 3.411694945381733e-16,
+   "diffs": [],
+   "under_declared_criterion": {
+    "n_outside_declared_criterion": 0,
+    "worst_per_metric": {},
+    "outside": []
+   }
+  },
+  "red_cnn": {
+   "status": "FAIL",
+   "n_checked": 75,
+   "n_diffs": 45,
+   "n_identical_nonfinite": 0,
+   "identical_nonfinite": [],
+   "worst_absdiff": 34.25529654347338,
+   "worst_reldiff": 6.358155165278288e-05,
+   "diffs": [
+    "red_cnn s42 sim_r010 psnr: recalc=51.9568185 onboard=51.9568021 absdiff=1.64e-05 reldiff=3.15e-07",
+    "red_cnn s42 sim_r010 cnr_mean: recalc=5.19204205 onboard=5.19192473 absdiff=0.000117 reldiff=2.26e-05",
+    "red_cnn s42 sim_r010 npwe_mean: recalc=891184.191 onboard=891167.322 absdiff=16.9 reldiff=1.89e-05",
+    "red_cnn s42 sim_r025 psnr: recalc=53.6466587 onboard=53.6466336 absdiff=2.51e-05 reldiff=4.69e-07",
+    "red_cnn s42 sim_r025 cnr_mean: recalc=8.05200977 onboard=8.05234793 absdiff=0.000338 reldiff=4.2e-05",
+    "red_cnn s42 sim_r025 npwe_mean: recalc=947247.031 onboard=947212.775 absdiff=34.3 reldiff=3.62e-05",
+    "red_cnn s42 sim_r050 psnr: recalc=54.460457 onboard=54.4604335 absdiff=2.35e-05 reldiff=4.32e-07",
+    "red_cnn s42 sim_r050 cnr_mean: recalc=10.971092 onboard=10.9703945 absdiff=0.000698 reldiff=6.36e-05",
+    "red_cnn s42 sim_r050 npwe_mean: recalc=972691.171 onboard=972688.947 absdiff=2.22 reldiff=2.29e-06",
+    "red_cnn s2023 sim_r010 psnr: recalc=51.9568185 onboard=51.9568021 absdiff=1.64e-05 reldiff=3.15e-07",
+    "red_cnn s2023 sim_r010 cnr_mean: recalc=5.19204205 onboard=5.19192473 absdiff=0.000117 reldiff=2.26e-05",
+    "red_cnn s2023 sim_r010 npwe_mean: recalc=891184.191 onboard=891167.322 absdiff=16.9 reldiff=1.89e-05",
+    "red_cnn s2023 sim_r025 psnr: recalc=53.6466587 onboard=53.6466336 absdiff=2.51e-05 reldiff=4.69e-07",
+    "red_cnn s2023 sim_r025 cnr_mean: recalc=8.05200977 onboard=8.05234793 absdiff=0.000338 reldiff=4.2e-05",
+    "red_cnn s2023 sim_r025 npwe_mean: recalc=947247.031 onboard=947212.775 absdiff=34.3 reldiff=3.62e-05",
+    "red_cnn s2023 sim_r050 psnr: recalc=54.460457 onboard=54.4604335 absdiff=2.35e-05 reldiff=4.32e-07",
+    "red_cnn s2023 sim_r050 cnr_mean: recalc=10.971092 onboard=10.9703945 absdiff=0.000698 reldiff=6.36e-05",
+    "red_cnn s2023 sim_r050 npwe_mean: recalc=972691.171 onboard=972688.947 absdiff=2.22 reldiff=2.29e-06",
+    "red_cnn s7 sim_r010 psnr: recalc=51.9568185 onboard=51.9568021 absdiff=1.64e-05 reldiff=3.15e-07",
+    "red_cnn s7 sim_r010 cnr_mean: recalc=5.19204205 onboard=5.19192473 absdiff=0.000117 reldiff=2.26e-05",
+    "red_cnn s7 sim_r010 npwe_mean: recalc=891184.191 onboard=891167.322 absdiff=16.9 reldiff=1.89e-05",
+    "red_cnn s7 sim_r025 psnr: recalc=53.6466587 onboard=53.6466336 absdiff=2.51e-05 reldiff=4.69e-07",
+    "red_cnn s7 sim_r025 cnr_mean: recalc=8.05200977 onboard=8.05234793 absdiff=0.000338 reldiff=4.2e-05",
+    "red_cnn s7 sim_r025 npwe_mean: recalc=947247.031 onboard=947212.775 absdiff=34.3 reldiff=3.62e-05",
+    "red_cnn s7 sim_r050 psnr: recalc=54.460457 onboard=54.4604335 absdiff=2.35e-05 reldiff=4.32e-07",
+    "red_cnn s7 sim_r050 cnr_mean: recalc=10.971092 onboard=10.9703945 absdiff=0.000698 reldiff=6.36e-05",
+    "red_cnn s7 sim_r050 npwe_mean: recalc=972691.171 onboard=972688.947 absdiff=2.22 reldiff=2.29e-06",
+    "red_cnn s12345 sim_r010 psnr: recalc=51.9568185 onboard=51.9568021 absdiff=1.64e-05 reldiff=3.15e-07",
+    "red_cnn s12345 sim_r010 cnr_mean: recalc=5.19204205 onboard=5.19192473 absdiff=0.000117 reldiff=2.26e-05",
+    "red_cnn s12345 sim_r010 npwe_mean: recalc=891184.191 onboard=891167.322 absdiff=16.9 reldiff=1.89e-05",
+    "red_cnn s12345 sim_r025 psnr: recalc=53.6466587 onboard=53.6466336 absdiff=2.51e-05 reldiff=4.69e-07",
+    "red_cnn s12345 sim_r025 cnr_mean: recalc=8.05200977 onboard=8.05234793 absdiff=0.000338 reldiff=4.2e-05",
+    "red_cnn s12345 sim_r025 npwe_mean: recalc=947247.031 onboard=947212.775 absdiff=34.3 reldiff=3.62e-05",
+    "red_cnn s12345 sim_r050 psnr: recalc=54.460457 onboard=54.4604335 absdiff=2.35e-05 reldiff=4.32e-07",
+    "red_cnn s12345 sim_r050 cnr_mean: recalc=10.971092 onboard=10.9703945 absdiff=0.000698 reldiff=6.36e-05",
+    "red_cnn s12345 sim_r050 npwe_mean: recalc=972691.171 onboard=972688.947 absdiff=2.22 reldiff=2.29e-06",
+    "red_cnn s999 sim_r010 psnr: recalc=51.9568185 onboard=51.9568021 absdiff=1.64e-05 reldiff=3.15e-07",
+    "red_cnn s999 sim_r010 cnr_mean: recalc=5.19204205 onboard=5.19192473 absdiff=0.000117 reldiff=2.26e-05",
+    "red_cnn s999 sim_r010 npwe_mean: recalc=891184.191 onboard=891167.322 absdiff=16.9 reldiff=1.89e-05",
+    "red_cnn s999 sim_r025 psnr: recalc=53.6466587 onboard=53.6466336 absdiff=2.51e-05 reldiff=4.69e-07",
+    "red_cnn s999 sim_r025 cnr_mean: recalc=8.05200977 onboard=8.05234793 absdiff=0.000338 reldiff=4.2e-05",
+    "red_cnn s999 sim_r025 npwe_mean: recalc=947247.031 onboard=947212.775 absdiff=34.3 reldiff=3.62e-05",
+    "red_cnn s999 sim_r050 psnr: recalc=54.460457 onboard=54.4604335 absdiff=2.35e-05 reldiff=4.32e-07",
+    "red_cnn s999 sim_r050 cnr_mean: recalc=10.971092 onboard=10.9703945 absdiff=0.000698 reldiff=6.36e-05",
+    "red_cnn s999 sim_r050 npwe_mean: recalc=972691.171 onboard=972688.947 absdiff=2.22 reldiff=2.29e-06"
+   ],
+   "under_declared_criterion": {
+    "n_outside_declared_criterion": 0,
+    "worst_per_metric": {
+     "psnr": {
+      "kind": "relative",
+      "tol": 0.0001,
+      "worst": 4.69e-07
+     },
+     "cnr_mean": {
+      "kind": "relative",
+      "tol": 0.0001,
+      "worst": 6.36e-05
+     },
+     "npwe_mean": {
+      "kind": "relative",
+      "tol": 0.0001,
+      "worst": 3.62e-05
+     }
+    },
+    "outside": []
+   }
+  },
+  "learn": {
+   "status": "PASS",
+   "n_checked": 75,
+   "n_diffs": 0,
+   "n_identical_nonfinite": 15,
+   "identical_nonfinite": [
+    "learn s42 sim_r010 cnr_mean: recalc=inf onboard=inf",
+    "learn s42 sim_r025 cnr_mean: recalc=inf onboard=inf",
+    "learn s42 sim_r050 cnr_mean: recalc=inf onboard=inf",
+    "learn s2023 sim_r010 cnr_mean: recalc=inf onboard=inf",
+    "learn s2023 sim_r025 cnr_mean: recalc=inf onboard=inf",
+    "learn s2023 sim_r050 cnr_mean: recalc=inf onboard=inf",
+    "learn s7 sim_r010 cnr_mean: recalc=inf onboard=inf",
+    "learn s7 sim_r025 cnr_mean: recalc=inf onboard=inf",
+    "learn s7 sim_r050 cnr_mean: recalc=inf onboard=inf",
+    "learn s12345 sim_r010 cnr_mean: recalc=inf onboard=inf",
+    "learn s12345 sim_r025 cnr_mean: recalc=inf onboard=inf",
+    "learn s12345 sim_r050 cnr_mean: recalc=inf onboard=inf",
+    "learn s999 sim_r010 cnr_mean: recalc=inf onboard=inf",
+    "learn s999 sim_r025 cnr_mean: recalc=inf onboard=inf",
+    "learn s999 sim_r050 cnr_mean: recalc=inf onboard=inf"
+   ],
+   "worst_absdiff": 1.1641532182693481e-10,
+   "worst_reldiff": 1.4269387164860856e-16,
+   "diffs": [],
+   "under_declared_criterion": {
+    "n_outside_declared_criterion": 0,
+    "worst_per_metric": {},
+    "outside": []
+   }
+  },
+  "ctformer": {
+   "status": "PASS",
+   "n_checked": 75,
+   "n_diffs": 0,
+   "n_identical_nonfinite": 0,
+   "identical_nonfinite": [],
+   "worst_absdiff": 2.9103830456733704e-11,
+   "worst_reldiff": 1.7648764472191338e-16,
+   "diffs": [],
+   "under_declared_criterion": {
+    "n_outside_declared_criterion": 0,
+    "worst_per_metric": {},
+    "outside": []
+   }
+  },
+  "corediff": {
+   "status": "FAIL",
+   "n_checked": 75,
+   "n_diffs": 45,
+   "n_identical_nonfinite": 0,
+   "identical_nonfinite": [],
+   "worst_absdiff": 6.373203292256221,
+   "worst_reldiff": 1.394168288607524e-05,
+   "diffs": [
+    "corediff s42 sim_r010 psnr: recalc=51.520326 onboard=51.5203424 absdiff=1.64e-05 reldiff=3.18e-07",
+    "corediff s42 sim_r010 cnr_mean: recalc=5.34290974 onboard=5.34298423 absdiff=7.45e-05 reldiff=1.39e-05",
+    "corediff s42 sim_r010 npwe_mean: recalc=829695.653 onboard=829694.133 absdiff=1.52 reldiff=1.83e-06",
+    "corediff s42 sim_r025 psnr: recalc=53.3568891 onboard=53.35691 absdiff=2.09e-05 reldiff=3.92e-07",
+    "corediff s42 sim_r025 cnr_mean: recalc=8.43143855 onboard=8.43143236 absdiff=6.19e-06 reldiff=7.34e-07",
+    "corediff s42 sim_r025 npwe_mean: recalc=871680.732 onboard=871680.971 absdiff=0.238 reldiff=2.74e-07",
+    "corediff s42 sim_r050 psnr: recalc=54.2830585 onboard=54.2830812 absdiff=2.26e-05 reldiff=4.17e-07",
+    "corediff s42 sim_r050 cnr_mean: recalc=11.5402117 onboard=11.5403572 absdiff=0.000145 reldiff=1.26e-05",
+    "corediff s42 sim_r050 npwe_mean: recalc=888557.796 onboard=888564.17 absdiff=6.37 reldiff=7.17e-06",
+    "corediff s2023 sim_r010 psnr: recalc=51.520326 onboard=51.5203424 absdiff=1.64e-05 reldiff=3.18e-07",
+    "corediff s2023 sim_r010 cnr_mean: recalc=5.34290974 onboard=5.34298423 absdiff=7.45e-05 reldiff=1.39e-05",
+    "corediff s2023 sim_r010 npwe_mean: recalc=829695.653 onboard=829694.133 absdiff=1.52 reldiff=1.83e-06",
+    "corediff s2023 sim_r025 psnr: recalc=53.3568891 onboard=53.35691 absdiff=2.09e-05 reldiff=3.92e-07",
+    "corediff s2023 sim_r025 cnr_mean: recalc=8.43143855 onboard=8.43143236 absdiff=6.19e-06 reldiff=7.34e-07",
+    "corediff s2023 sim_r025 npwe_mean: recalc=871680.732 onboard=871680.971 absdiff=0.238 reldiff=2.74e-07",
+    "corediff s2023 sim_r050 psnr: recalc=54.2830585 onboard=54.2830812 absdiff=2.26e-05 reldiff=4.17e-07",
+    "corediff s2023 sim_r050 cnr_mean: recalc=11.5402117 onboard=11.5403572 absdiff=0.000145 reldiff=1.26e-05",
+    "corediff s2023 sim_r050 npwe_mean: recalc=888557.796 onboard=888564.17 absdiff=6.37 reldiff=7.17e-06",
+    "corediff s7 sim_r010 psnr: recalc=51.520326 onboard=51.5203424 absdiff=1.64e-05 reldiff=3.18e-07",
+    "corediff s7 sim_r010 cnr_mean: recalc=5.34290974 onboard=5.34298423 absdiff=7.45e-05 reldiff=1.39e-05",
+    "corediff s7 sim_r010 npwe_mean: recalc=829695.653 onboard=829694.133 absdiff=1.52 reldiff=1.83e-06",
+    "corediff s7 sim_r025 psnr: recalc=53.3568891 onboard=53.35691 absdiff=2.09e-05 reldiff=3.92e-07",
+    "corediff s7 sim_r025 cnr_mean: recalc=8.43143855 onboard=8.43143236 absdiff=6.19e-06 reldiff=7.34e-07",
+    "corediff s7 sim_r025 npwe_mean: recalc=871680.732 onboard=871680.971 absdiff=0.238 reldiff=2.74e-07",
+    "corediff s7 sim_r050 psnr: recalc=54.2830585 onboard=54.2830812 absdiff=2.26e-05 reldiff=4.17e-07",
+    "corediff s7 sim_r050 cnr_mean: recalc=11.5402117 onboard=11.5403572 absdiff=0.000145 reldiff=1.26e-05",
+    "corediff s7 sim_r050 npwe_mean: recalc=888557.796 onboard=888564.17 absdiff=6.37 reldiff=7.17e-06",
+    "corediff s12345 sim_r010 psnr: recalc=51.520326 onboard=51.5203424 absdiff=1.64e-05 reldiff=3.18e-07",
+    "corediff s12345 sim_r010 cnr_mean: recalc=5.34290974 onboard=5.34298423 absdiff=7.45e-05 reldiff=1.39e-05",
+    "corediff s12345 sim_r010 npwe_mean: recalc=829695.653 onboard=829694.133 absdiff=1.52 reldiff=1.83e-06",
+    "corediff s12345 sim_r025 psnr: recalc=53.3568891 onboard=53.35691 absdiff=2.09e-05 reldiff=3.92e-07",
+    "corediff s12345 sim_r025 cnr_mean: recalc=8.43143855 onboard=8.43143236 absdiff=6.19e-06 reldiff=7.34e-07",
+    "corediff s12345 sim_r025 npwe_mean: recalc=871680.732 onboard=871680.971 absdiff=0.238 reldiff=2.74e-07",
+    "corediff s12345 sim_r050 psnr: recalc=54.2830585 onboard=54.2830812 absdiff=2.26e-05 reldiff=4.17e-07",
+    "corediff s12345 sim_r050 cnr_mean: recalc=11.5402117 onboard=11.5403572 absdiff=0.000145 reldiff=1.26e-05",
+    "corediff s12345 sim_r050 npwe_mean: recalc=888557.796 onboard=888564.17 absdiff=6.37 reldiff=7.17e-06",
+    "corediff s999 sim_r010 psnr: recalc=51.520326 onboard=51.5203424 absdiff=1.64e-05 reldiff=3.18e-07",
+    "corediff s999 sim_r010 cnr_mean: recalc=5.34290974 onboard=5.34298423 absdiff=7.45e-05 reldiff=1.39e-05",
+    "corediff s999 sim_r010 npwe_mean: recalc=829695.653 onboard=829694.133 absdiff=1.52 reldiff=1.83e-06",
+    "corediff s999 sim_r025 psnr: recalc=53.3568891 onboard=53.35691 absdiff=2.09e-05 reldiff=3.92e-07",
+    "corediff s999 sim_r025 cnr_mean: recalc=8.43143855 onboard=8.43143236 absdiff=6.19e-06 reldiff=7.34e-07",
+    "corediff s999 sim_r025 npwe_mean: recalc=871680.732 onboard=871680.971 absdiff=0.238 reldiff=2.74e-07",
+    "corediff s999 sim_r050 psnr: recalc=54.2830585 onboard=54.2830812 absdiff=2.26e-05 reldiff=4.17e-07",
+    "corediff s999 sim_r050 cnr_mean: recalc=11.5402117 onboard=11.5403572 absdiff=0.000145 reldiff=1.26e-05",
+    "corediff s999 sim_r050 npwe_mean: recalc=888557.796 onboard=888564.17 absdiff=6.37 reldiff=7.17e-06"
+   ],
+   "under_declared_criterion": {
+    "n_outside_declared_criterion": 0,
+    "worst_per_metric": {
+     "psnr": {
+      "kind": "relative",
+      "tol": 0.0001,
+      "worst": 4.17e-07
+     },
+     "cnr_mean": {
+      "kind": "relative",
+      "tol": 0.0001,
+      "worst": 1.39e-05
+     },
+     "npwe_mean": {
+      "kind": "relative",
+      "tol": 0.0001,
+      "worst": 7.17e-06
+     }
+    },
+    "outside": []
+   }
+  }
+ },
+ "overall": "FAIL",
+ "tolerance_audit": {
+  "generated_by": "R6_recalc/compare_linux_vs_ref.py",
+  "shipped_criterion": {
+   "kind": "absolute",
+   "tolerance": 1e-06,
+   "overall": "FAIL"
+  },
+  "ladder": {
+   "absdiff@1e-06": {
+    "verdict": "FAIL",
+    "failing_models": [
+     "corediff",
+     "red_cnn"
+    ]
+   },
+   "absdiff@1e-05": {
+    "verdict": "FAIL",
+    "failing_models": [
+     "corediff",
+     "red_cnn"
+    ]
+   },
+   "absdiff@1e-04": {
+    "verdict": "FAIL",
+    "failing_models": [
+     "corediff",
+     "red_cnn"
+    ]
+   },
+   "absdiff@1e-03": {
+    "verdict": "FAIL",
+    "failing_models": [
+     "corediff",
+     "red_cnn"
+    ]
+   },
+   "reldiff@1e-06": {
+    "verdict": "FAIL",
+    "failing_models": [
+     "corediff",
+     "red_cnn"
+    ]
+   },
+   "reldiff@1e-05": {
+    "verdict": "FAIL",
+    "failing_models": [
+     "corediff",
+     "red_cnn"
+    ]
+   },
+   "reldiff@1e-04": {
+    "verdict": "PASS",
+    "failing_models": []
+   },
+   "reldiff@1e-03": {
+    "verdict": "PASS",
+    "failing_models": []
+   }
+  }
+ }
+}
