@@ -222,6 +222,10 @@ def derive() -> dict:
         with open(ob, encoding="utf-8") as f:
             oj = json.load(f)
         diffs = []
+        # (seed, dose, metric, absdiff, reldiff) at full precision for every flagged
+        # difference; the per-metric verdicts below are computed from these numbers,
+        # never from the 3-significant-digit strings in ``diffs`` (display only).
+        flagged = []
         identical_nonfinite = []
         n_checked = 0
         worst_abs = 0.0
@@ -258,6 +262,7 @@ def derive() -> dict:
                             diffs.append(f"{m} s{s} {d} {met}: "
                                          f"recalc={rv:.9g} onboard={ov:.9g} "
                                          f"absdiff={ad:.3g} reldiff={rel:.3g}")
+                            flagged.append((f"s{s}", d, met, ad, rel))
                     elif cls == "identical-non-finite":
                         pm["n_identical_nonfinite"] += 1
                         identical_nonfinite.append(
@@ -268,6 +273,7 @@ def derive() -> dict:
                         diffs.append(f"{m} s{s} {d} {met}: "
                                      f"recalc={rv:.9g} onboard={ov:.9g} "
                                      f"absdiff={ad:.3g} reldiff={rel:.3g}")
+                        flagged.append((f"s{s}", d, met, ad, rel))
         for s in SEEDS:
             for d in DOSES:
                 rn = rj["per_seed"][s]["per_dose"].get(d, {}).get("n")
@@ -278,16 +284,7 @@ def derive() -> dict:
         all_pass_abs = all_pass_abs and ok
         # declared per-metric relative 1e-4 verdicts over the flagged differences
         fails, worst_per_metric = [], {}
-        for line in diffs:
-            parts = line.split()
-            if len(parts) < 6 or not parts[1].startswith("s"):
-                continue
-            seed, dose, metric = parts[1], parts[2], parts[3].rstrip(":")
-            try:
-                a = float(parts[6].split("=")[1]) if "absdiff=" in line else None
-                r = float(parts[7].split("=")[1]) if "reldiff=" in line else None
-            except (IndexError, ValueError):
-                continue
+        for seed, dose, metric, a, r in flagged:
             c = CRITERION.get(metric)
             if c is None:
                 continue

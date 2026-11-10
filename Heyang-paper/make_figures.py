@@ -71,7 +71,7 @@ def _paper_style():
     matplotlib.rcParams.update({
         "font.family": "serif", "font.serif": ["cmr10"],
         "mathtext.fontset": "cm", "axes.formatter.use_mathtext": True,
-        "axes.unicode_minus": False, "font.size": 8.5,
+        "axes.unicode_minus": False, "font.size": 10,
         "pdf.fonttype": 42,
     })
 
@@ -108,17 +108,17 @@ def fig_tolerance(rows: list[dict]):
     xs = [10 ** (k / 20) for k in range(int(20 * math.log10(xmin)), int(20 * math.log10(xmax)) + 1)]
     ax.fill_between(xs, [1e-6] * len(xs), [max(1e-4 * x, 1e-6) for x in xs],
                     color="#e9e7df", lw=0, zorder=0)
-    ax.text(6e3, 3e-2, "fails absolute $10^{-6}$,\npasses relative $10^{-4}$",
-            fontsize=7.5, color=MUTED, ha="center", va="center", zorder=1)
+    ax.text(1.5e3, 3e-3, "fails absolute $10^{-6}$,\npasses relative $10^{-4}$",
+            fontsize=9, color=MUTED, ha="center", va="center", zorder=1)
     for e in (-6, -5, -4, -3):
         ax.axhline(10.0 ** e, color=MUTED, lw=0.9 if e == -6 else 0.6,
                    ls=(0, (4, 2)) if e == -6 else (0, (1, 2)), zorder=1)
-        ax.text(xmax * 0.92, 10.0 ** e * 1.25, "$10^{%d}$" % e, fontsize=7,
+        ax.text(xmax * 0.92, 10.0 ** e * 1.25, "$10^{%d}$" % e, fontsize=8.5,
                 color=MUTED, ha="right", va="bottom")
-    ax.text(xmax * 0.92, 1e-3 * 9, "absolute criteria", fontsize=7, color=MUTED,
+    ax.text(xmax * 0.92, 1e-3 * 6, "absolute criteria", fontsize=8.5, color=MUTED,
             ha="right", va="bottom")
     ax.plot([xmin, xmax], [1e-4 * xmin, 1e-4 * xmax], color=INK, lw=1.1, zorder=2)
-    ax.text(3e4, 1e-4 * 3e4 * 2.6, "relative $10^{-4}$", fontsize=8, color=INK,
+    ax.text(2e2, 1e-4 * 2e2 * 2.6, "relative $10^{-4}$", fontsize=9.5, color=INK,
             rotation=29, rotation_mode="anchor", ha="left", va="bottom")
 
     summary, strip = {}, []
@@ -158,9 +158,9 @@ def fig_tolerance(rows: list[dict]):
         sx.scatter([x], [y], s=30, marker=MARKER[met], facecolor=COLOR[met],
                    edgecolor="white", linewidth=0.6, zorder=3)
         sx.annotate(f"{n}", (x, y), xytext=(7, 0), textcoords="offset points",
-                    fontsize=7, color=INK, ha="left", va="center")
+                    fontsize=8.5, color=INK, ha="left", va="center")
     sx.set_ylim(-1, 1); sx.set_yticks([])
-    sx.set_ylabel("identical", fontsize=7.5, color=MUTED, rotation=0,
+    sx.set_ylabel("identical", fontsize=9, color=MUTED, rotation=0,
                   ha="right", va="center")
 
     ax.set_xlim(xmin, xmax); ax.set_ylim(ymin, ymax)
@@ -173,7 +173,7 @@ def fig_tolerance(rows: list[dict]):
         for side in ("left", "bottom"):
             a.spines[side].set_color(MUTED); a.spines[side].set_linewidth(0.6)
     sx.spines["left"].set_visible(False)
-    ax.legend(fontsize=7.5, frameon=False, loc="upper left", handletextpad=0.3,
+    ax.legend(fontsize=9, frameon=False, loc="upper left", handletextpad=0.3,
               borderaxespad=0.3, labelcolor=INK, ncol=1)
     fig.subplots_adjust(left=0.13, right=0.98, top=0.98, bottom=0.12)
     return fig, {"comparisons": len(rows), "finite_comparisons": len(fin),
@@ -255,27 +255,27 @@ def fig_threeway(rows):
             # light cells keep dark ink for contrast.
             t = norm(X[i, j])
             color = "white" if t >= 0.62 else "#40403c"
-            ax.text(j, i, label, ha="center", va="center", fontsize=6.5,
+            ax.text(j, i, label, ha="center", va="center", fontsize=8,
                     color=color)
         ax.set_xticks(range(n_met))
         ax.set_xticklabels([LABEL[m] for m in cmp_.METRICS], rotation=45,
-                           ha="right", fontsize=6.5, color=MUTED)
+                           ha="right", fontsize=8, color=MUTED)
         ax.set_yticks(range(len(cmp_.MODELS)))
-        ax.set_yticklabels([METHOD[m] for m in cmp_.MODELS], fontsize=6.5, color=INK)
-        ax.set_title(titles[pair], fontsize=7.5, color=INK)
+        ax.set_yticklabels([METHOD[m] for m in cmp_.MODELS], fontsize=8, color=INK)
+        ax.set_title(titles[pair], fontsize=9, color=INK)
         ax.tick_params(length=0)
         for s in ax.spines.values():
             s.set_color(MUTED); s.set_linewidth(0.6)
     fig.suptitle("Three-way comparison of 75 comparisons per method per pair",
-                 fontsize=7.5, color=INK, y=0.98)
+                 fontsize=9, color=INK, y=0.98)
     fig.subplots_adjust(left=0.09, right=0.96, top=0.87, bottom=0.32, wspace=0.55)
     # Own axis for the colour bar: a horizontal bar centred below the three
     # panels, so it no longer covers the "Windows vs Linux" cells or ticks.
     cax = fig.add_axes([0.22, 0.125, 0.56, 0.028])
     cb = fig.colorbar(im, cax=cax, orientation="horizontal")
-    cb.set_label("largest relative difference (finite)", fontsize=6.5, color=INK)
+    cb.set_label("largest relative difference (finite)", fontsize=8, color=INK)
     cb.ax.tick_params(labelsize=6.5, colors=MUTED, length=2.5, width=0.6)
-    cb.ax.xaxis.label.set_fontsize(6.5); cb.ax.xaxis.label.set_color(INK)
+    cb.ax.xaxis.label.set_fontsize(8); cb.ax.xaxis.label.set_color(INK)
     return fig, summary
 
 
@@ -299,7 +299,7 @@ def fig_redcnn_reldiff(rows):
     ax.axvspan(-0.5, 1.5, color="#eef3fb", lw=0, zorder=0)
     ax.axvspan(1.5, 3.5, color="#fbf1ec", lw=0, zorder=0)
     ax.axhline(1e-4, color=INK, lw=1.0, zorder=1)
-    ax.text(3.45, 1e-4 * 1.35, "relative $10^{-4}$", fontsize=7.5, color=INK,
+    ax.text(3.45, 1e-4 * 1.35, "relative $10^{-4}$", fontsize=9, color=INK,
             ha="right", va="bottom")
     summary, all_vals = {}, []
     for i, met in enumerate(order):
@@ -326,8 +326,8 @@ def fig_redcnn_reldiff(rows):
     ax.set_xticklabels([LABEL[m] for m in order], color=INK)
     ax.set_xlim(-0.5, len(order) - 0.5)
     ax.set_ylim(3e-8, 1e-3)
-    ax.text(0.5, 6e-4, "image fidelity", fontsize=7.5, color=MUTED, ha="center")
-    ax.text(2.5, 6e-4, "detectability", fontsize=7.5, color=MUTED, ha="center")
+    ax.text(0.5, 6e-4, "image fidelity", fontsize=9, color=MUTED, ha="center")
+    ax.text(2.5, 6e-4, "detectability", fontsize=9, color=MUTED, ha="center")
     ax.set_ylabel("relative difference", color=INK)
     ax.tick_params(labelsize=7.5, colors=MUTED, length=2.5, width=0.6, which="both")
     ax.tick_params(axis="x", length=0)
@@ -335,7 +335,7 @@ def fig_redcnn_reldiff(rows):
         ax.spines[side].set_visible(False)
     for side in ("left", "bottom"):
         ax.spines[side].set_color(MUTED); ax.spines[side].set_linewidth(0.6)
-    ax.legend(fontsize=7, frameon=False, loc="lower right", handletextpad=0.2,
+    ax.legend(fontsize=8.5, frameon=False, loc="lower right", handletextpad=0.2,
               borderaxespad=0.2, labelcolor=INK)
     fig.subplots_adjust(left=0.15, right=0.98, top=0.97, bottom=0.11)
     return fig, {"model": "red_cnn", "comparisons": len(pts), "per_metric": summary,

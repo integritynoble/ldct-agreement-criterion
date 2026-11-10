@@ -1,0 +1,1142 @@
+{
+  "artifact": "comparison_three_env_full764",
+  "environments": [
+    "reference",
+    "env_A",
+    "env_B"
+  ],
+  "models": [
+    "blur",
+    "red_cnn",
+    "learn",
+    "ctformer",
+    "corediff"
+  ],
+  "seeds": [
+    "42",
+    "2023",
+    "7",
+    "12345",
+    "999"
+  ],
+  "doses": [
+    "sim_r010",
+    "sim_r025",
+    "sim_r050"
+  ],
+  "metrics": [
+    "psnr",
+    "ssim",
+    "cnr_mean",
+    "cho_auc_mean",
+    "npwe_mean"
+  ],
+  "grid_per_pair": 375,
+  "criterion_current": {
+    "declared_on": "2026-09-12",
+    "kind": "relative",
+    "tol": 0.0001,
+    "units": "each metric in its own units",
+    "source": "R6\u72ec\u7acb\u590d\u7b97\u64cd\u4f5c\u6307\u5357.md \u00a74 (revision of 2026-09-12), Director decision 2026-09-11 \u00a72.1 route (b)"
+  },
+  "criterion_shipped": {
+    "kind": "absolute",
+    "tol": 1e-06,
+    "status": "superseded 2026-09-12; kept verbatim as history"
+  },
+  "sources": {
+    "reference": {
+      "blur": "WS-1_dataset/baselines/results/blur_results_det_full764.json",
+      "red_cnn": "WS-1_dataset/baselines/results/red_cnn_results_det_full764.json",
+      "learn": "WS-1_dataset/baselines/results/learn_results_det_full764.json",
+      "ctformer": "WS-1_dataset/baselines/results/ctformer_results_det_full764.json",
+      "corediff": "WS-1_dataset/baselines/results/corediff_results_det_full764.json"
+    },
+    "env_A": {
+      "blur": "WS-1_dataset/R6_recalc/third_env_run_A/results/blur_det_full764.json",
+      "red_cnn": "WS-1_dataset/R6_recalc/third_env_run_A/results/red_cnn_det_full764.json",
+      "learn": "WS-1_dataset/R6_recalc/third_env_run_A/results/learn_det_full764.json",
+      "ctformer": "WS-1_dataset/R6_recalc/third_env_run_A/results/ctformer_det_full764.json",
+      "corediff": "WS-1_dataset/R6_recalc/third_env_run_A/results/corediff_det_full764.json"
+    },
+    "env_B": {
+      "blur": "WS-1_dataset/R6_recalc/third_env_run_B/results/blur_det_full764.json",
+      "red_cnn": "WS-1_dataset/R6_recalc/third_env_run_B/results/red_cnn_det_full764.json",
+      "learn": "WS-1_dataset/R6_recalc/third_env_run_B/results/learn_det_full764.json",
+      "ctformer": "WS-1_dataset/R6_recalc/third_env_run_B/results/ctformer_det_full764.json",
+      "corediff": "WS-1_dataset/R6_recalc/third_env_run_B/results/corediff_det_full764.json"
+    }
+  },
+  "sha256": {
+    "reference": {
+      "blur": "aa046be6a372566ed05281f29efa39a1a02078c9b91383d2206361a05932438c",
+      "red_cnn": "3e49c67b3797e1954ea83d32b547d213413ba962e8e0f904d394c5685690a439",
+      "learn": "e0c84ab6a4ce2660c366f1b9f85c6528e4b81fcc281bd4c61ff7cb78688ab848",
+      "ctformer": "2187e3b0c0ed2d09896d6919e537d9ddddb62ccc00901c48d4a5a1f580fb15c8",
+      "corediff": "f437681ffe49568a0db09c485a303e0adff2c20851dbc41ac2394025995eb77d"
+    },
+    "env_A": {
+      "blur": "1692be5be87a7e892d66be02361927556c293ed1ed5dffee4bc645b2b443d4c3",
+      "red_cnn": "a40a9d2749453532dd0cf4d64e58dd6e263e26bedd0490a82c1a036e5d79ba25",
+      "learn": "2db702fbdb27375f988990c45ec4acb8020a8494bc22192719c1a0c60f1e55f0",
+      "ctformer": "7e819418052155315014f2ffabdff7c53fefd8dea156fb54062c4d1ce1e7cbf9",
+      "corediff": "d93ba3f7c7e7d165780f860edbda6b869f5e1e2b814f0690dd60816dbbcd0a48"
+    },
+    "env_B": {
+      "blur": "b5c174edf2a3cd4d86d7bc0638e4051f8ea0445f9fe00519d944c4d437ba6862",
+      "red_cnn": "d6f2478f29a9f04868663b56c68089ca77d518a3bd13621fa065a82eceb65dc5",
+      "learn": "ec5f5308f1066f4d4f9015aed03c8a82b23992987e12fece2ffd7d45558510fc",
+      "ctformer": "7a0e2aa643bb9bedfa7fc31a2ef80b290eb529344f9271501d04e940d9bed06f",
+      "corediff": "407eab79f43acb7c57ac59b27d3f388d7fd9431b761d88ea3b74df08ec052ef3"
+    }
+  },
+  "pairs": [
+    {
+      "pair": "reference_vs_env_A",
+      "n_compared": 360,
+      "n_nonfinite": 15,
+      "verdict": "PASS",
+      "current_per_metric": {
+        "kind": "relative",
+        "tol": 0.0001,
+        "n_diff": 0,
+        "per_model_fail": [],
+        "per_metric_fail": {
+          "psnr": 0,
+          "ssim": 0,
+          "cnr_mean": 0,
+          "cho_auc_mean": 0,
+          "npwe_mean": 0
+        }
+      },
+      "shipped_absolute": {
+        "kind": "absolute",
+        "tol": 1e-06,
+        "superseded": true,
+        "n_diff": 90,
+        "per_model_fail": [
+          "blur",
+          "red_cnn",
+          "learn",
+          "ctformer",
+          "corediff"
+        ],
+        "per_metric_fail": {
+          "psnr": 0,
+          "ssim": 0,
+          "cnr_mean": 15,
+          "cho_auc_mean": 0,
+          "npwe_mean": 75
+        }
+      },
+      "per_metric": {
+        "psnr": {
+          "n_compared": 75,
+          "n_nonfinite": 0,
+          "n_abs_diff": 0,
+          "n_rel_diff": 0,
+          "max_abs": 1.3147045052619433e-07,
+          "max_rel": 2.469738013739905e-09
+        },
+        "ssim": {
+          "n_compared": 75,
+          "n_nonfinite": 0,
+          "n_abs_diff": 0,
+          "n_rel_diff": 0,
+          "max_abs": 2.496529538653647e-09,
+          "max_rel": 2.5287194828529274e-09
+        },
+        "cnr_mean": {
+          "n_compared": 60,
+          "n_nonfinite": 15,
+          "n_abs_diff": 15,
+          "n_rel_diff": 0,
+          "max_abs": 5.28945309454798e-05,
+          "max_rel": 6.273453527845108e-06
+        },
+        "cho_auc_mean": {
+          "n_compared": 75,
+          "n_nonfinite": 0,
+          "n_abs_diff": 0,
+          "n_rel_diff": 0,
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "npwe_mean": {
+          "n_compared": 75,
+          "n_nonfinite": 0,
+          "n_abs_diff": 75,
+          "n_rel_diff": 0,
+          "max_abs": 3.272067278623581,
+          "max_rel": 3.6824073506316993e-06
+        }
+      },
+      "per_model": {
+        "blur": {
+          "n_compared": 75,
+          "n_abs_diff": 15,
+          "n_rel_diff": 0,
+          "per_metric": {
+            "psnr": {
+              "abs": 0,
+              "rel": 0
+            },
+            "ssim": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cnr_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cho_auc_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "npwe_mean": {
+              "abs": 15,
+              "rel": 0
+            }
+          }
+        },
+        "red_cnn": {
+          "n_compared": 75,
+          "n_abs_diff": 15,
+          "n_rel_diff": 0,
+          "per_metric": {
+            "psnr": {
+              "abs": 0,
+              "rel": 0
+            },
+            "ssim": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cnr_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cho_auc_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "npwe_mean": {
+              "abs": 15,
+              "rel": 0
+            }
+          }
+        },
+        "learn": {
+          "n_compared": 60,
+          "n_abs_diff": 15,
+          "n_rel_diff": 0,
+          "per_metric": {
+            "psnr": {
+              "abs": 0,
+              "rel": 0
+            },
+            "ssim": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cnr_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cho_auc_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "npwe_mean": {
+              "abs": 15,
+              "rel": 0
+            }
+          }
+        },
+        "ctformer": {
+          "n_compared": 75,
+          "n_abs_diff": 15,
+          "n_rel_diff": 0,
+          "per_metric": {
+            "psnr": {
+              "abs": 0,
+              "rel": 0
+            },
+            "ssim": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cnr_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cho_auc_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "npwe_mean": {
+              "abs": 15,
+              "rel": 0
+            }
+          }
+        },
+        "corediff": {
+          "n_compared": 75,
+          "n_abs_diff": 30,
+          "n_rel_diff": 0,
+          "per_metric": {
+            "psnr": {
+              "abs": 0,
+              "rel": 0
+            },
+            "ssim": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cnr_mean": {
+              "abs": 15,
+              "rel": 0
+            },
+            "cho_auc_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "npwe_mean": {
+              "abs": 15,
+              "rel": 0
+            }
+          }
+        }
+      },
+      "worst_abs": {
+        "abs": 3.272067278623581,
+        "rel": 3.6824073506316993e-06,
+        "where": {
+          "model": "corediff",
+          "seed": "42",
+          "dose": "sim_r050",
+          "metric": "npwe_mean"
+        }
+      },
+      "top_rel_diffs": [],
+      "nonfinite": [
+        {
+          "model": "learn",
+          "seed": "42",
+          "dose": "sim_r010",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "42",
+          "dose": "sim_r025",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "42",
+          "dose": "sim_r050",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "2023",
+          "dose": "sim_r010",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "2023",
+          "dose": "sim_r025",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "2023",
+          "dose": "sim_r050",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "7",
+          "dose": "sim_r010",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "7",
+          "dose": "sim_r025",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "7",
+          "dose": "sim_r050",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "12345",
+          "dose": "sim_r010",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "12345",
+          "dose": "sim_r025",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "12345",
+          "dose": "sim_r050",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "999",
+          "dose": "sim_r010",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "999",
+          "dose": "sim_r025",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "999",
+          "dose": "sim_r050",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        }
+      ]
+    },
+    {
+      "pair": "reference_vs_env_B",
+      "n_compared": 360,
+      "n_nonfinite": 15,
+      "verdict": "PASS",
+      "current_per_metric": {
+        "kind": "relative",
+        "tol": 0.0001,
+        "n_diff": 0,
+        "per_model_fail": [],
+        "per_metric_fail": {
+          "psnr": 0,
+          "ssim": 0,
+          "cnr_mean": 0,
+          "cho_auc_mean": 0,
+          "npwe_mean": 0
+        }
+      },
+      "shipped_absolute": {
+        "kind": "absolute",
+        "tol": 1e-06,
+        "superseded": true,
+        "n_diff": 90,
+        "per_model_fail": [
+          "blur",
+          "red_cnn",
+          "learn",
+          "ctformer",
+          "corediff"
+        ],
+        "per_metric_fail": {
+          "psnr": 0,
+          "ssim": 0,
+          "cnr_mean": 15,
+          "cho_auc_mean": 0,
+          "npwe_mean": 75
+        }
+      },
+      "per_metric": {
+        "psnr": {
+          "n_compared": 75,
+          "n_nonfinite": 0,
+          "n_abs_diff": 0,
+          "n_rel_diff": 0,
+          "max_abs": 1.3147045052619433e-07,
+          "max_rel": 2.469738013739905e-09
+        },
+        "ssim": {
+          "n_compared": 75,
+          "n_nonfinite": 0,
+          "n_abs_diff": 0,
+          "n_rel_diff": 0,
+          "max_abs": 2.496529538653647e-09,
+          "max_rel": 2.5287194828529274e-09
+        },
+        "cnr_mean": {
+          "n_compared": 60,
+          "n_nonfinite": 15,
+          "n_abs_diff": 15,
+          "n_rel_diff": 0,
+          "max_abs": 5.28945309454798e-05,
+          "max_rel": 6.273453527845108e-06
+        },
+        "cho_auc_mean": {
+          "n_compared": 75,
+          "n_nonfinite": 0,
+          "n_abs_diff": 0,
+          "n_rel_diff": 0,
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "npwe_mean": {
+          "n_compared": 75,
+          "n_nonfinite": 0,
+          "n_abs_diff": 75,
+          "n_rel_diff": 0,
+          "max_abs": 3.272067278623581,
+          "max_rel": 3.6824073506316993e-06
+        }
+      },
+      "per_model": {
+        "blur": {
+          "n_compared": 75,
+          "n_abs_diff": 15,
+          "n_rel_diff": 0,
+          "per_metric": {
+            "psnr": {
+              "abs": 0,
+              "rel": 0
+            },
+            "ssim": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cnr_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cho_auc_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "npwe_mean": {
+              "abs": 15,
+              "rel": 0
+            }
+          }
+        },
+        "red_cnn": {
+          "n_compared": 75,
+          "n_abs_diff": 15,
+          "n_rel_diff": 0,
+          "per_metric": {
+            "psnr": {
+              "abs": 0,
+              "rel": 0
+            },
+            "ssim": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cnr_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cho_auc_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "npwe_mean": {
+              "abs": 15,
+              "rel": 0
+            }
+          }
+        },
+        "learn": {
+          "n_compared": 60,
+          "n_abs_diff": 15,
+          "n_rel_diff": 0,
+          "per_metric": {
+            "psnr": {
+              "abs": 0,
+              "rel": 0
+            },
+            "ssim": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cnr_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cho_auc_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "npwe_mean": {
+              "abs": 15,
+              "rel": 0
+            }
+          }
+        },
+        "ctformer": {
+          "n_compared": 75,
+          "n_abs_diff": 15,
+          "n_rel_diff": 0,
+          "per_metric": {
+            "psnr": {
+              "abs": 0,
+              "rel": 0
+            },
+            "ssim": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cnr_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cho_auc_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "npwe_mean": {
+              "abs": 15,
+              "rel": 0
+            }
+          }
+        },
+        "corediff": {
+          "n_compared": 75,
+          "n_abs_diff": 30,
+          "n_rel_diff": 0,
+          "per_metric": {
+            "psnr": {
+              "abs": 0,
+              "rel": 0
+            },
+            "ssim": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cnr_mean": {
+              "abs": 15,
+              "rel": 0
+            },
+            "cho_auc_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "npwe_mean": {
+              "abs": 15,
+              "rel": 0
+            }
+          }
+        }
+      },
+      "worst_abs": {
+        "abs": 3.272067278623581,
+        "rel": 3.6824073506316993e-06,
+        "where": {
+          "model": "corediff",
+          "seed": "42",
+          "dose": "sim_r050",
+          "metric": "npwe_mean"
+        }
+      },
+      "top_rel_diffs": [],
+      "nonfinite": [
+        {
+          "model": "learn",
+          "seed": "42",
+          "dose": "sim_r010",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "42",
+          "dose": "sim_r025",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "42",
+          "dose": "sim_r050",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "2023",
+          "dose": "sim_r010",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "2023",
+          "dose": "sim_r025",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "2023",
+          "dose": "sim_r050",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "7",
+          "dose": "sim_r010",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "7",
+          "dose": "sim_r025",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "7",
+          "dose": "sim_r050",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "12345",
+          "dose": "sim_r010",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "12345",
+          "dose": "sim_r025",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "12345",
+          "dose": "sim_r050",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "999",
+          "dose": "sim_r010",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "999",
+          "dose": "sim_r025",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "999",
+          "dose": "sim_r050",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        }
+      ]
+    },
+    {
+      "pair": "env_A_vs_env_B",
+      "n_compared": 360,
+      "n_nonfinite": 15,
+      "verdict": "PASS",
+      "current_per_metric": {
+        "kind": "relative",
+        "tol": 0.0001,
+        "n_diff": 0,
+        "per_model_fail": [],
+        "per_metric_fail": {
+          "psnr": 0,
+          "ssim": 0,
+          "cnr_mean": 0,
+          "cho_auc_mean": 0,
+          "npwe_mean": 0
+        }
+      },
+      "shipped_absolute": {
+        "kind": "absolute",
+        "tol": 1e-06,
+        "superseded": true,
+        "n_diff": 0,
+        "per_model_fail": [],
+        "per_metric_fail": {
+          "psnr": 0,
+          "ssim": 0,
+          "cnr_mean": 0,
+          "cho_auc_mean": 0,
+          "npwe_mean": 0
+        }
+      },
+      "per_metric": {
+        "psnr": {
+          "n_compared": 75,
+          "n_nonfinite": 0,
+          "n_abs_diff": 0,
+          "n_rel_diff": 0,
+          "max_abs": 1.4210854715202004e-14,
+          "max_rel": 3.411694945381733e-16
+        },
+        "ssim": {
+          "n_compared": 75,
+          "n_nonfinite": 0,
+          "n_abs_diff": 0,
+          "n_rel_diff": 0,
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "cnr_mean": {
+          "n_compared": 60,
+          "n_nonfinite": 15,
+          "n_abs_diff": 0,
+          "n_rel_diff": 0,
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "cho_auc_mean": {
+          "n_compared": 75,
+          "n_nonfinite": 0,
+          "n_abs_diff": 0,
+          "n_rel_diff": 0,
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "npwe_mean": {
+          "n_compared": 75,
+          "n_nonfinite": 0,
+          "n_abs_diff": 0,
+          "n_rel_diff": 0,
+          "max_abs": 2.3283064365386963e-10,
+          "max_rel": 2.853877434034198e-16
+        }
+      },
+      "per_model": {
+        "blur": {
+          "n_compared": 75,
+          "n_abs_diff": 0,
+          "n_rel_diff": 0,
+          "per_metric": {
+            "psnr": {
+              "abs": 0,
+              "rel": 0
+            },
+            "ssim": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cnr_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cho_auc_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "npwe_mean": {
+              "abs": 0,
+              "rel": 0
+            }
+          }
+        },
+        "red_cnn": {
+          "n_compared": 75,
+          "n_abs_diff": 0,
+          "n_rel_diff": 0,
+          "per_metric": {
+            "psnr": {
+              "abs": 0,
+              "rel": 0
+            },
+            "ssim": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cnr_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cho_auc_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "npwe_mean": {
+              "abs": 0,
+              "rel": 0
+            }
+          }
+        },
+        "learn": {
+          "n_compared": 60,
+          "n_abs_diff": 0,
+          "n_rel_diff": 0,
+          "per_metric": {
+            "psnr": {
+              "abs": 0,
+              "rel": 0
+            },
+            "ssim": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cnr_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cho_auc_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "npwe_mean": {
+              "abs": 0,
+              "rel": 0
+            }
+          }
+        },
+        "ctformer": {
+          "n_compared": 75,
+          "n_abs_diff": 0,
+          "n_rel_diff": 0,
+          "per_metric": {
+            "psnr": {
+              "abs": 0,
+              "rel": 0
+            },
+            "ssim": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cnr_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cho_auc_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "npwe_mean": {
+              "abs": 0,
+              "rel": 0
+            }
+          }
+        },
+        "corediff": {
+          "n_compared": 75,
+          "n_abs_diff": 0,
+          "n_rel_diff": 0,
+          "per_metric": {
+            "psnr": {
+              "abs": 0,
+              "rel": 0
+            },
+            "ssim": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cnr_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "cho_auc_mean": {
+              "abs": 0,
+              "rel": 0
+            },
+            "npwe_mean": {
+              "abs": 0,
+              "rel": 0
+            }
+          }
+        }
+      },
+      "worst_abs": {
+        "abs": 2.3283064365386963e-10,
+        "rel": 2.853877434034198e-16,
+        "where": {
+          "model": "learn",
+          "seed": "42",
+          "dose": "sim_r050",
+          "metric": "npwe_mean"
+        }
+      },
+      "top_rel_diffs": [],
+      "nonfinite": [
+        {
+          "model": "learn",
+          "seed": "42",
+          "dose": "sim_r010",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "42",
+          "dose": "sim_r025",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "42",
+          "dose": "sim_r050",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "2023",
+          "dose": "sim_r010",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "2023",
+          "dose": "sim_r025",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "2023",
+          "dose": "sim_r050",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "7",
+          "dose": "sim_r010",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "7",
+          "dose": "sim_r025",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "7",
+          "dose": "sim_r050",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "12345",
+          "dose": "sim_r010",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "12345",
+          "dose": "sim_r025",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "12345",
+          "dose": "sim_r050",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "999",
+          "dose": "sim_r010",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "999",
+          "dose": "sim_r025",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        },
+        {
+          "model": "learn",
+          "seed": "999",
+          "dose": "sim_r050",
+          "metric": "cnr_mean",
+          "a": "inf",
+          "b": "inf"
+        }
+      ]
+    }
+  ]
+}

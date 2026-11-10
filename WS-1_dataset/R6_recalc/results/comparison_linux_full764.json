@@ -155,17 +155,17 @@
      "psnr": {
       "kind": "relative",
       "tol": 0.0001,
-      "worst": 4.69e-07
+      "worst": 4.6874104727737236e-07
      },
      "cnr_mean": {
       "kind": "relative",
       "tol": 0.0001,
-      "worst": 6.36e-05
+      "worst": 6.358155165278288e-05
      },
      "npwe_mean": {
       "kind": "relative",
       "tol": 0.0001,
-      "worst": 3.62e-05
+      "worst": 3.616431010731347e-05
      }
     },
     "outside": []
@@ -278,17 +278,17 @@
      "psnr": {
       "kind": "relative",
       "tol": 0.0001,
-      "worst": 4.17e-07
+      "worst": 4.1715727550865776e-07
      },
      "cnr_mean": {
       "kind": "relative",
       "tol": 0.0001,
-      "worst": 1.39e-05
+      "worst": 1.394168288607524e-05
      },
      "npwe_mean": {
       "kind": "relative",
       "tol": 0.0001,
-      "worst": 7.17e-06
+      "worst": 7.17247387470935e-06
      }
     },
     "outside": []
